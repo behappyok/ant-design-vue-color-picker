@@ -1,3 +1,4 @@
+
 export interface HSLColor {
   a?: number | undefined;
   h: number;
@@ -23,6 +24,21 @@ export interface ColorResult {
 }
 
 
+export type ColorPickerTypes =
+  | 'Chrome'
+  | 'Compact'
+  | 'Grayscale'
+  | 'Material'
+  | 'Photoshop'
+  | 'Sketch'
+  | 'Slider'
+  | 'Swatches'
+  | 'Twitter'
+
+export type ColorPickerValue = Color | HSVColor
+export type ColorPickerResult = ColorResult
+export type AnyColorFormat = ColorPickerResult | ColorPickerValue
+
 export type ColorPickerProps = {
   lowerHex?:boolean,
   valueFormat?: string,
@@ -37,4 +53,6 @@ export type ColorPickerProps = {
   pickerStyles?:CSSProperties
   picker?: ColorPickerTypes
   popoverProps?: any
+  pickerProps:Object
 }
+

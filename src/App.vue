@@ -1,9 +1,14 @@
 <template>
-    <color-picker   v-model="colors" ></color-picker>
+    <a-color-picker   v-model="colors" ></a-color-picker>
 </template>
 <script lang="ts" setup>
-import { ref } from 'vue';
-import ColorPicker from './ColorPicker.vue'
-
+import { defineComponent, ref } from 'vue';
+import AColorPicker from './ColorPicker'
+const AColorPicker3=defineComponent({
+    setup(){
+        return ()=>'33'
+    }
+})
+console.log(AColorPicker)
 const colors = ref()
 </script>
