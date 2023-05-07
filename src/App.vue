@@ -9,6 +9,5 @@ const AColorPicker3=defineComponent({
         return ()=>'33'
     }
 })
-console.log(AColorPicker)
 const colors = ref()
 </script>
