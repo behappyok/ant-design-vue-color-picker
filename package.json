@@ -1,0 +1,42 @@
+{
+  "name": "@elonmuscle/antdv-color-picker",
+  "private": false,
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/behappyok/ant-design-vue-color-picker.git"
+  },
+  "version": "6.1.0",
+  "main": "./dist/antdv-color-picker.umd.js",
+  "module": "./dist/dist/antdv-color-picker.es.js",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./dist/antdv-color-picker.es.js",
+      "require": "./dist/antdv-color-picker.umd.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "vue": ">=3.0.3"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^3.0.0",
+    "vite": "^4.3.5",
+    "vue": "^3.0.3"
+  },
+  "dependencies": {
+    "@ckpack/vue-color": "^1.4.1",
+    "@types/tinycolor2": "^1.4.3",
+    "@vitejs/plugin-vue": "^4.2.1",
+    "ant-design-vue": "^3.2.20",
+    "tinycolor2": "^1.6.0",
+    "vue-types": "^5.0.2"
+  }
+}
