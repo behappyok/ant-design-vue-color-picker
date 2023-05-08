@@ -15,7 +15,9 @@ import {
   Swatches,
   Twitter,
 } from '@ckpack/vue-color'
-import 'ant-design-vue/lib/input/style/css'
+
+import 'ant-design-vue/lib/input/style/index.css'
+import 'ant-design-vue/lib/button/style/index.css'
 import 'ant-design-vue/lib/popover/style/index.css'
 
 interface HSVColor {
@@ -287,22 +289,22 @@ export default defineComponent({
       const _parentStyle = attrs.style as object
       return { ..._parentStyle, display: 'flex' }
     })
-
+ 
     return () => {
       return (
         <>
-          {hasPop.value ? <Popover trigger='click' v-bind={props.popoverProps}>
+          {hasPop.value ? <Popover trigger='click' {...props.popoverProps}  >
             {{
-              content: () => (<Picker.value style={innerPickerStyles.value} v-model={[innerState.value, 'modelValue']} on-change={triggerOnChange}
+              content: () => (<Picker.value  style={innerPickerStyles.value} v-model={[innerState.value, 'modelValue']} on-change={triggerOnChange}
                 on-change-complete={triggerOnChangeComplete}  {...innerPickerProps.value} />),
-              default: !props.popup ? <InputGroup compact style={inputGroupStyle.value}>
+              default: !props.popup ? ()=>(<InputGroup compact style={inputGroupStyle.value}>
                 <Input value={readAbleModelValue.value} readonly>
                   {{
-                    addonAfter: (<div style={blStyles.value}></div>)
+                    addonAfter: ()=>(<div style={blStyles.value}></div>)
                   }}
                 </Input>
-              </InputGroup> :
-                <div style={blStyles.value}></div>
+              </InputGroup>) :
+                ()=>(<div style={blStyles.value}></div>)
             }}
           </Popover>
             : (<Picker.value style={innerPickerStyles.value} v-model={[innerState.value, 'modelValue']} on-change={triggerOnChange}
