@@ -8,7 +8,7 @@
     "type": "git",
     "url": "https://github.com/behappyok/ant-design-vue-color-picker.git"
   },
-  "version": "3.2.13",
+  "version": "3.2.15",
   "main": "./dist/antdv-color-picker.umd.js",
   "type": "module",
   "exports": {

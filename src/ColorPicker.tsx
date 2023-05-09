@@ -174,19 +174,19 @@ export default defineComponent({
     const innerState = computed({
       get: () => {
         const getQualifiedColorFromString = () => {
-          const _splitModelValue = props.modelValue?.split(',')
-          if (_splitModelValue.length == 3 || _splitModelValue.length == 4) {
-            const [_first, _second, _third, _fourth] = _splitModelValue
-            if (Number(_first) >= 0 && Number(_second) < 1 && Number(_third) < 1) {
-              isHsl.value = true
-              isHsla.value = !!_fourth && true
-              return { hsl: { h: _first, s: _second, l: _third, a: _fourth ?? 1 } }
-            } else {
-              isRgb.value = true
-              isRgba.value = !!_fourth && true
-              return { rgb: { r: _first, g: _second, b: _third, a: _fourth ?? 1 } }
-            }
-          }
+          // const _splitModelValue = props.modelValue?.split(',')
+          // if (_splitModelValue.length == 3 || _splitModelValue.length == 4) {
+          //   const [_first, _second, _third, _fourth] = _splitModelValue
+          //   if (Number(_first) >= 0 && Number(_second) >0&& Number(_second) < 1&& Number(_third) >0&&  && Number(_third) < 1) {
+          //     isHsl.value = true
+          //     isHsla.value = !!_fourth && true
+          //     return { hsl: { h: _first, s: _second, l: _third, a: _fourth ?? 1 } }
+          //   } else {
+          //     isRgb.value = true
+          //     isRgba.value = !!_fourth && true
+          //     return { rgb: { r: _first, g: _second, b: _third, a: _fourth ?? 1 } }
+          //   }
+          // }
           if (props.modelValue?.replace('#', '').length === 8) {
             isHex8.value = true
           }
